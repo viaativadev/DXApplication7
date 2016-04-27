@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnSelectArq = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddAcao = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddRegistro = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddCampo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddParametro = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddPosicao = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddPreposicao = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSalvarRegra = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAbrirRegra = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnConexaoFTP = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
@@ -63,8 +64,15 @@
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.Thema = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.Thema = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.statusBar = new System.Windows.Forms.StatusStrip();
+            this.toolblDirArq = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolDirArq = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolblDirArqAux = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolDirArqAux = new System.Windows.Forms.ToolStripStatusLabel();
+            this.fdbSelectDir = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            this.statusBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -73,18 +81,18 @@
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.btnSelectArq,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
-            this.barButtonItem5,
-            this.barButtonItem6,
-            this.barButtonItem7,
-            this.barButtonItem8,
-            this.barButtonItem9,
+            this.btnAddAcao,
+            this.btnAddRegistro,
+            this.btnAddCampo,
+            this.btnAddParametro,
+            this.btnAddPosicao,
+            this.btnAddPreposicao,
+            this.btnSalvarRegra,
+            this.btnAbrirRegra,
             this.barButtonItem10,
             this.barButtonItem11,
             this.barButtonItem12,
-            this.barButtonItem13,
+            this.btnConexaoFTP,
             this.barButtonItem14,
             this.barButtonItem15,
             this.barButtonItem16,
@@ -111,70 +119,71 @@
             this.btnSelectArq.Id = 1;
             this.btnSelectArq.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSelectArq.LargeGlyph")));
             this.btnSelectArq.Name = "btnSelectArq";
+            this.btnSelectArq.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSelectArq_ItemClick);
             // 
-            // barButtonItem2
+            // btnAddAcao
             // 
-            this.barButtonItem2.Caption = "Adicionar ação";
-            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
-            this.barButtonItem2.Id = 2;
-            this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btnAddAcao.Caption = "Adicionar ação";
+            this.btnAddAcao.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAddAcao.Glyph")));
+            this.btnAddAcao.Id = 2;
+            this.btnAddAcao.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAddAcao.LargeGlyph")));
+            this.btnAddAcao.Name = "btnAddAcao";
             // 
-            // barButtonItem3
+            // btnAddRegistro
             // 
-            this.barButtonItem3.Caption = "Escolher registro";
-            this.barButtonItem3.Id = 3;
-            this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            this.btnAddRegistro.Caption = "Escolher registro";
+            this.btnAddRegistro.Id = 3;
+            this.btnAddRegistro.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAddRegistro.LargeGlyph")));
+            this.btnAddRegistro.Name = "btnAddRegistro";
+            this.btnAddRegistro.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
-            // barButtonItem4
+            // btnAddCampo
             // 
-            this.barButtonItem4.Caption = "Vincular campo";
-            this.barButtonItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.Glyph")));
-            this.barButtonItem4.Id = 4;
-            this.barButtonItem4.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.LargeGlyph")));
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.btnAddCampo.Caption = "Vincular campo";
+            this.btnAddCampo.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAddCampo.Glyph")));
+            this.btnAddCampo.Id = 4;
+            this.btnAddCampo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAddCampo.LargeGlyph")));
+            this.btnAddCampo.Name = "btnAddCampo";
             // 
-            // barButtonItem5
+            // btnAddParametro
             // 
-            this.barButtonItem5.Caption = "Adicionar parâmetro";
-            this.barButtonItem5.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.Glyph")));
-            this.barButtonItem5.Id = 5;
-            this.barButtonItem5.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.LargeGlyph")));
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.btnAddParametro.Caption = "Adicionar parâmetro";
+            this.btnAddParametro.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAddParametro.Glyph")));
+            this.btnAddParametro.Id = 5;
+            this.btnAddParametro.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAddParametro.LargeGlyph")));
+            this.btnAddParametro.Name = "btnAddParametro";
             // 
-            // barButtonItem6
+            // btnAddPosicao
             // 
-            this.barButtonItem6.Caption = "Definir posição";
-            this.barButtonItem6.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.Glyph")));
-            this.barButtonItem6.Id = 6;
-            this.barButtonItem6.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.LargeGlyph")));
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.btnAddPosicao.Caption = "Definir posição";
+            this.btnAddPosicao.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAddPosicao.Glyph")));
+            this.btnAddPosicao.Id = 6;
+            this.btnAddPosicao.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAddPosicao.LargeGlyph")));
+            this.btnAddPosicao.Name = "btnAddPosicao";
             // 
-            // barButtonItem7
+            // btnAddPreposicao
             // 
-            this.barButtonItem7.Caption = "Escolher preposição";
-            this.barButtonItem7.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.Glyph")));
-            this.barButtonItem7.Id = 7;
-            this.barButtonItem7.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.LargeGlyph")));
-            this.barButtonItem7.Name = "barButtonItem7";
+            this.btnAddPreposicao.Caption = "Escolher preposição";
+            this.btnAddPreposicao.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAddPreposicao.Glyph")));
+            this.btnAddPreposicao.Id = 7;
+            this.btnAddPreposicao.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAddPreposicao.LargeGlyph")));
+            this.btnAddPreposicao.Name = "btnAddPreposicao";
             // 
-            // barButtonItem8
+            // btnSalvarRegra
             // 
-            this.barButtonItem8.Caption = "Salvar Regra";
-            this.barButtonItem8.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.Glyph")));
-            this.barButtonItem8.Id = 8;
-            this.barButtonItem8.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.LargeGlyph")));
-            this.barButtonItem8.Name = "barButtonItem8";
+            this.btnSalvarRegra.Caption = "Salvar Regra";
+            this.btnSalvarRegra.Glyph = ((System.Drawing.Image)(resources.GetObject("btnSalvarRegra.Glyph")));
+            this.btnSalvarRegra.Id = 8;
+            this.btnSalvarRegra.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSalvarRegra.LargeGlyph")));
+            this.btnSalvarRegra.Name = "btnSalvarRegra";
             // 
-            // barButtonItem9
+            // btnAbrirRegra
             // 
-            this.barButtonItem9.Caption = "Abrir Regra";
-            this.barButtonItem9.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.Glyph")));
-            this.barButtonItem9.Id = 9;
-            this.barButtonItem9.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.LargeGlyph")));
-            this.barButtonItem9.Name = "barButtonItem9";
+            this.btnAbrirRegra.Caption = "Abrir Regra";
+            this.btnAbrirRegra.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAbrirRegra.Glyph")));
+            this.btnAbrirRegra.Id = 9;
+            this.btnAbrirRegra.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAbrirRegra.LargeGlyph")));
+            this.btnAbrirRegra.Name = "btnAbrirRegra";
             // 
             // barButtonItem10
             // 
@@ -199,14 +208,17 @@
             this.barButtonItem12.Id = 12;
             this.barButtonItem12.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.LargeGlyph")));
             this.barButtonItem12.Name = "barButtonItem12";
+            this.barButtonItem12.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // barButtonItem13
+            // btnConexaoFTP
             // 
-            this.barButtonItem13.Caption = "Conexão";
-            this.barButtonItem13.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.Glyph")));
-            this.barButtonItem13.Id = 13;
-            this.barButtonItem13.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.LargeGlyph")));
-            this.barButtonItem13.Name = "barButtonItem13";
+            this.btnConexaoFTP.Caption = "Conexão FTP";
+            this.btnConexaoFTP.Glyph = ((System.Drawing.Image)(resources.GetObject("btnConexaoFTP.Glyph")));
+            this.btnConexaoFTP.Id = 13;
+            this.btnConexaoFTP.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnConexaoFTP.LargeGlyph")));
+            this.btnConexaoFTP.Name = "btnConexaoFTP";
+            this.btnConexaoFTP.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnConexaoFTP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnConexaoFTP_ItemClick);
             // 
             // barButtonItem14
             // 
@@ -273,20 +285,20 @@
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.AllowTextClipping = false;
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem5);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnAddAcao);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnAddRegistro);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnAddCampo);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnAddParametro);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnAddPosicao);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnAddPreposicao);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.ShowCaptionButton = false;
             this.ribbonPageGroup2.Text = "Filtros";
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem8);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem9);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnSalvarRegra);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnAbrirRegra);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Regras";
             // 
@@ -299,6 +311,7 @@
             // 
             // ribbonPageGroup5
             // 
+            this.ribbonPageGroup5.AllowTextClipping = false;
             this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem11);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Bioblioteca";
@@ -312,8 +325,9 @@
             // 
             // ribbonPageGroup4
             // 
+            this.ribbonPageGroup4.AllowTextClipping = false;
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem12);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem13);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnConexaoFTP);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Base de arquivos";
             // 
@@ -362,18 +376,68 @@
             // 
             this.Thema.LookAndFeel.SkinName = "Office 2016 Colorful";
             // 
+            // statusBar
+            // 
+            this.statusBar.AutoSize = false;
+            this.statusBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolblDirArq,
+            this.toolDirArq,
+            this.toolblDirArqAux,
+            this.toolDirArqAux});
+            this.statusBar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.statusBar.Location = new System.Drawing.Point(0, 606);
+            this.statusBar.Name = "statusBar";
+            this.statusBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusBar.Size = new System.Drawing.Size(1022, 113);
+            this.statusBar.TabIndex = 1;
+            this.statusBar.Text = "statusStrip1";
+            // 
+            // toolblDirArq
+            // 
+            this.toolblDirArq.Name = "toolblDirArq";
+            this.toolblDirArq.Size = new System.Drawing.Size(1019, 15);
+            this.toolblDirArq.Text = "Diretório de arquivo selecionado:";
+            this.toolblDirArq.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // toolDirArq
+            // 
+            this.toolDirArq.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.toolDirArq.Name = "toolDirArq";
+            this.toolDirArq.Size = new System.Drawing.Size(1019, 15);
+            this.toolDirArq.Text = "Nenhum...";
+            this.toolDirArq.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // toolblDirArqAux
+            // 
+            this.toolblDirArqAux.Name = "toolblDirArqAux";
+            this.toolblDirArqAux.Size = new System.Drawing.Size(1019, 15);
+            this.toolblDirArqAux.Text = "Diretório de arquivo auxiliar:";
+            this.toolblDirArqAux.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // toolDirArqAux
+            // 
+            this.toolDirArqAux.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.toolDirArqAux.Name = "toolDirArqAux";
+            this.toolDirArqAux.Size = new System.Drawing.Size(1019, 15);
+            this.toolDirArqAux.Text = "Nenhum...";
+            this.toolDirArqAux.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
             // Principal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 719);
+            this.Controls.Add(this.statusBar);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "Principal";
             this.Ribbon = this.ribbonControl1;
             this.Text = "VIA Consult Tools";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            this.statusBar.ResumeLayout(false);
+            this.statusBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,21 +449,21 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btnSelectArq;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem btnAddAcao;
+        private DevExpress.XtraBars.BarButtonItem btnAddRegistro;
+        private DevExpress.XtraBars.BarButtonItem btnAddCampo;
+        private DevExpress.XtraBars.BarButtonItem btnAddParametro;
+        private DevExpress.XtraBars.BarButtonItem btnAddPosicao;
+        private DevExpress.XtraBars.BarButtonItem btnAddPreposicao;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.LookAndFeel.DefaultLookAndFeel Thema;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem btnSalvarRegra;
+        private DevExpress.XtraBars.BarButtonItem btnAbrirRegra;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
+        private DevExpress.XtraBars.BarButtonItem btnConexaoFTP;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
@@ -416,6 +480,12 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage7;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private System.Windows.Forms.StatusStrip statusBar;
+        private System.Windows.Forms.ToolStripStatusLabel toolblDirArq;
+        private System.Windows.Forms.ToolStripStatusLabel toolDirArq;
+        private System.Windows.Forms.ToolStripStatusLabel toolblDirArqAux;
+        private System.Windows.Forms.ToolStripStatusLabel toolDirArqAux;
+        private System.Windows.Forms.FolderBrowserDialog fdbSelectDir;
     }
 }
 
